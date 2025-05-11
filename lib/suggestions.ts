@@ -3,116 +3,24 @@ export interface Suggestion {
   prompt: string;
 }
 
-const artStyles = ["anime", "art nouveau", "ukiyo-e", "watercolor"];
+const artStyles = ["realistic", "interior", "architectural sketch"];
 
 const basePrompts: { text: string; prompt: string }[] = [
   {
-    text: "Salamander Dusk",
-    prompt: "A salamander at dusk in a forest pond",
+    text: "Litet & Skandinaviskt",
+    prompt: "A small Scandinavian bathroom with white tiles and wooden elements",
   },
   {
-    text: "Sultry Chicken",
-    prompt:
-      "A sultry chicken peering around the corner from shadows, clearly up to no good",
+    text: "Lyxigt & Modernt",
+    prompt: "A luxurious modern bathroom with marble walls and walk-in shower",
   },
   {
-    text: "Cat Vercel",
-    prompt: "A cat launching its website on Vercel",
+    text: "Industriellt",
+    prompt: "An industrial bathroom with concrete walls and black fixtures",
   },
   {
-    text: "Red Panda",
-    prompt:
-      "A red panda sipping tea under cherry blossoms at sunset with Mount Fuji in the background",
-  },
-  {
-    text: "Beach Otter",
-    prompt: "A mischievous otter surfing the waves in Bali at golden hour",
-  },
-  {
-    text: "Badger Ramen",
-    prompt: "A pensive honey badger eating a bowl of ramen in Osaka",
-  },
-  {
-    text: "Zen Frog",
-    prompt:
-      "A frog meditating on a lotus leaf in a tranquil forest pond at dawn, surrounded by fireflies",
-  },
-  {
-    text: "Macaw Love",
-    prompt:
-      "A colorful macaw delivering a love letter, flying over the Grand Canyon at sunrise",
-  },
-  {
-    text: "Fox Painting",
-    prompt: "A fox walking through a field of lavender with a golden sunset",
-  },
-  {
-    text: "Armadillo Aerospace",
-    prompt:
-      "An armadillo in a rocket at countdown preparing to blast off to Mars",
-  },
-  {
-    text: "Penguin Delight",
-    prompt: "A penguin in pajamas eating ice cream while watching television",
-  },
-  {
-    text: "Echidna Library",
-    prompt:
-      "An echidna reading a book in a cozy library built into the branches of a eucalyptus tree",
-  },
-  {
-    text: "Capybara Onsen",
-    prompt:
-      "A capybara relaxing in a hot spring surrounded by snow-covered mountains with a waterfall in the background",
-  },
-  {
-    text: "Lion Throne",
-    prompt:
-      "A regal lion wearing a crown, sitting on a throne in a jungle palace, with waterfalls in the distance",
-  },
-  {
-    text: "Dolphin Glow",
-    prompt:
-      "A dolphin leaping through a glowing ring of bioluminescence under a starry sky",
-  },
-  {
-    text: "Owl Detective",
-    prompt:
-      "An owl wearing a monocle and top hat, solving a mystery in a misty forest at midnight",
-  },
-  {
-    text: "Jellyfish Cathedral",
-    prompt:
-      "A jellyfish floating gracefully in an underwater cathedral made of coral and glass",
-  },
-  {
-    text: "Platypus River",
-    prompt: "A platypus foraging in a river with a sunset in the background",
-  },
-  {
-    text: "Chameleon Urban",
-    prompt:
-      "A chameleon blending into a graffiti-covered wall in an urban jungle",
-  },
-  {
-    text: "Tortoise Oasis",
-    prompt:
-      "A giant tortoise slowly meandering its way to an oasis in the desert",
-  },
-  {
-    text: "Hummingbird Morning",
-    prompt:
-      "A hummingbird sipping nectar from a purple bougainvillea at sunrise, captured mid-flight",
-  },
-  {
-    text: "Polar Bear",
-    prompt:
-      "A polar bear clambering onto an iceberg to greet a friendly harbor seal as dusk falls",
-  },
-  {
-    text: "Lemur Sunbathing",
-    prompt:
-      "A ring-tailed lemur sunbathing on a rock in Madagascar in early morning light",
+    text: "Vintage 1920-tal",
+    prompt: "A vintage 1920s Swedish bathroom with clawfoot tub and patterned tiles",
   },
 ];
 
