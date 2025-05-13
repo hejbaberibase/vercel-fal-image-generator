@@ -1,0 +1,76 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: 
+globs: 
+alwaysApply: false
+---
+
+# Product Requirements Document (PRD): Bathroom Prompt Builder
+
+## 1. Introduction / Overview
+
+This feature will allow users to generate AI-generated images of bathrooms by combining predefined styles (e.g. Scandinavian, industrial) with customizable toggles for key elements such as "bathtub", "shower wall", "window", etc. The user can still enter free text, but now they also have a visual interface for building their ideal prompt.
+
+This improves the UX by making the creative process more guided, interactive, and accessible for non-technical users.
+
+## 2. Goals
+
+* Allow users to toggle bathroom features (checkboxes/buttons)
+* Dynamically construct a prompt based on selected toggles + style
+* Maintain ability to submit free-text prompts
+* Improve generation relevance and user engagement
+
+## 3. User Stories
+
+* As a user, I want to select from a few bathroom styles so that I can start with a relevant design direction.
+* As a user, I want to toggle specific elements like "window", "bathtub", or "black tiles" so I can customize my generated bathroom.
+* As a user, I still want the option to write my own prompt freely.
+* As a user, I want to see my selections turned into a full prompt before I hit "Generate".
+
+## 4. Functional Requirements
+
+1. The system must display a set of bathroom style presets.
+2. The system must render toggle UI (checkboxes or buttons) for bathroom features.
+3. The system must maintain internal state of selected toggles.
+4. The system must concatenate selected features and style into a grammatically coherent prompt.
+5. The system must display the final constructed prompt before generation.
+6. The system must support fallback to manual prompt input.
+7. The system must send the final prompt to the image generation API (FAL).
+8. The system must display generated image results as it does now.
+
+## 5. Non-Goals (Out of Scope)
+
+* Saving prompt presets or user settings
+* User authentication or history of generated prompts
+* Drag-and-drop layout customization of bathroom
+
+## 6. Design Considerations
+
+* Use existing `PromptSuggestions`, `PromptInput`, or build new `PromptBuilder.tsx` component
+* Layout: toggles can be arranged in 2-3 columns or grouped by type
+* Keep UI minimal, mobile-friendly, and Scandinavian in visual style
+
+## 7. Technical Considerations
+
+* State management can be local with `useState` unless complexity grows
+* Prompt composition can be a pure helper function (e.g. `buildPrompt()`) and tested separately
+* No backend changes required, API stays the same
+
+## 8. Success Metrics
+
+* At least 50% of users choose to use feature toggles (vs only free text)
+* Reduced prompt errors or edge case results reported
+* Increased engagement (multiple generations per session)
+
+## 9. Open Questions
+
+* Should user see preview of composed prompt live as they toggle?
+* How many toggles is too many? (start with 5–7?)
+* Should toggles override or combine with manual text?
+* Should we support "reset" or "randomize" toggles?
+
+---
