@@ -14,6 +14,8 @@ import {
 import { Suggestion } from "@/lib/suggestions";
 import { useImageGeneration } from "@/hooks/use-image-generation";
 import { Header } from "./Header";
+import { BathroomFeatureCategory } from "@/components/BathroomFeatureCategory";
+import { getFeaturesByCategory, getSelectedFeaturesByCategory } from "@/lib/bathroom-features";
 
 interface ProviderInstance {
   id: string;
@@ -165,6 +167,20 @@ export function ImagePlayground({
             );
           })()}
         </>
+        <div className="space-y-6 mb-8">
+          <h2 className="text-2xl font-semibold tracking-tight">Bathroom Features</h2>
+          <div className="grid gap-6">
+            {categoryConfigs.map((category) => (
+              <BathroomFeatureCategory
+                key={category.id}
+                category={category}
+                features={getFeaturesByCategory(bathroomFeatures, category.id)}
+                selectedFeatures={getSelectedFeaturesByCategory(category.id)}
+                onToggleFeature={toggleFeature}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
