@@ -4,6 +4,10 @@ import { useState } from "react";
 import { ModelSelect } from "@/components/ModelSelect";
 import { PromptInput } from "@/components/PromptInput";
 import { ModelCardCarousel } from "@/components/ModelCardCarousel";
+import { BathroomFeatureCategory } from "@/components/BathroomFeatureCategory";
+import { useBathroomFeatures } from "@/hooks/use-bathroom-features";
+import { categoryConfigs, getFeaturesByCategory } from "@/lib/bathroom-categories";
+import { bathroomFeatures } from "@/lib/bathroom-features";
 import {
   MODEL_CONFIGS,
   PROVIDERS,
@@ -14,8 +18,6 @@ import {
 import { Suggestion } from "@/lib/suggestions";
 import { useImageGeneration } from "@/hooks/use-image-generation";
 import { Header } from "./Header";
-import { BathroomFeatureCategory } from "@/components/BathroomFeatureCategory";
-import { getFeaturesByCategory, getSelectedFeaturesByCategory } from "@/lib/bathroom-features";
 
 interface ProviderInstance {
   id: string;
